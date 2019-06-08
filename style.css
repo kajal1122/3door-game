@@ -1,0 +1,64 @@
+body
+{
+  background-image: url(images/game.jpeg);
+ text-align: center;
+ margin-top: 100px;
+}
+h1
+{
+  font-family: 'Shojumaru', cursive;
+  color: #FFFF00;
+}
+
+.btn
+{
+  border-radius: 20px;
+  width: 200px;
+  padding: 4px;
+  text-align: center;
+  color: #778899;
+  background-color: black;
+  border-color: green;
+}
+
+.subBtn
+{
+  display: block;
+  margin-left: 618px;
+  margin-top: 10px;
+  color: green;
+  background-color: black;
+  border-radius: 20px;
+  padding: 2px;
+  border-color: yellow;
+}
+
+.starting-section
+{
+  height: 12rem;
+  width: 25rem;
+  padding: 100px;
+  display: none;
+}
+.icon
+{
+  font-size: 12rem;
+  height: 6rem;
+  width: 25rem;
+  color: #ff6600;
+
+}
+
+.message-box
+{
+  height: .1rem;
+  width: 32rem;
+  margin-left: 369px;
+  margin-top: 100px;
+  padding: 100px;
+  border-radius: 20px;
+  display: none;
+  border-style: solid;
+  border-color: #ff6600;
+  color: green;
+}
