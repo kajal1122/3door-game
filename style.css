@@ -47,7 +47,9 @@ h1
   width: 25rem;
   color: #ff6600;
 
+
 }
+
 
 .message-box
 {
@@ -61,4 +63,18 @@ h1
   border-style: solid;
   border-color: #ff6600;
   color: green;
+}
+.game-stage
+{
+  display: none;
+  color: white;
+  font-size: 12px;
+  padding: 40px;
+
+}
+.game-asset
+{
+  display: none;
+  font-size: 12px;
+  color: white;
 }
