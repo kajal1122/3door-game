@@ -1,3 +1,4 @@
+
 var subBtn = $('.subBtn');
 var heading = $(".heading");
 var btn = $(".btn");
@@ -7,8 +8,10 @@ var icon = $('.icon');
 var userInput = $('.user-input');
 var randomNum ;
 var userName;
+var audio = $('#music')[0];
 
 subBtn.click(function(){
+  audio.play();
    userName = $("#userName").val();
 
   $(document.body).css('background-image', 'none');
@@ -30,16 +33,18 @@ subBtn.click(function(){
 
   icon.click(function(){
 
-     randomNum = Math.floor((Math.random()*4)+1);
+     randomNum = Math.floor((Math.random()*8)+1);
      console.log(randomNum);
-     if(lives > 0 && stage < 32)
+     if(lives > 0 && stage <= 31)
      {
+
+
 
        if(this.id == "icon1")
        {
 
 
-          if(randomNum == 1  && sword ==0 && sheild == 0)
+          if(randomNum !=2 && randomNum !=3  && randomNum !=4 && sword ==0 && sheild == 0)
           {
             userInput.html("You choose to open the first door.Whoops!...you can feel the stench of monster's den.You have no Sword! You have no sheild! And now, you have no head! Enjoy the afterlife "+userName);
            lives = lives -1;
@@ -47,7 +52,7 @@ subBtn.click(function(){
            stage = stage+1;
            $('.stageNum').html(stage);
            }
-            if(randomNum == 1 && sheild != 0)
+            if(randomNum !=2 && randomNum !=3  && randomNum !=4  && sheild != 0)
            {
              userInput.html("You choose to open the first door.Yor found a monster.He looks at you with his glowing red eyes in the dark.Scared shirtless , you put your shield forward,the shield breaks.But before the monster's razor sharp clawscan get to you, you close the door.")
              sheild = sheild -1;
@@ -55,7 +60,7 @@ subBtn.click(function(){
              $('.shield').html(sheild);
              $('.stageNum').html(stage);
            }
-           if(randomNum == 1 && sword != 0)
+           if(randomNum !=2 && randomNum !=3  && randomNum !=4  && sword != 0)
            {
              userInput.html("You choose to open the first door. You found monster.But worry not,you use your sword to kill it.The sword gets trapped in the monster's rock hard skin. Move forward "+userName);
               sword = sword -1;
@@ -89,7 +94,7 @@ subBtn.click(function(){
        }
        if(this.id == "icon2" )
        {
-         if(randomNum == 1 && sword ==0 && sheild == 0)
+         if(randomNum !=2 && randomNum !=3  && randomNum !=4  && sword ==0 && sheild == 0)
          {
            userInput.html("You choose to open the second door.Whoops!...you can feel the stench of monster's den.You have no Sword! You have no sheild! And now, you have no head! Enjoy the afterlife "+userName);
           lives = lives -1;
@@ -97,7 +102,7 @@ subBtn.click(function(){
           stage = stage+1;
           $('.stageNum').html(stage);
           }
-           if(randomNum == 1 && sheild != 0)
+           if(randomNum !=2 && randomNum !=3  && randomNum !=4  && sheild != 0)
           {
             userInput.html("You choose to open the second door.Yor found a monster.He looks at you with his glowing red eyes in the dark.Scared shirtless , you put your shield forward,the shield breaks.But before the monster's razor sharp clawscan get to you, you close the door.")
             sheild = sheild -1;
@@ -105,7 +110,7 @@ subBtn.click(function(){
             $('.shield').html(sheild);
             $('.stageNum').html(stage);
           }
-          if(randomNum == 1 && sword != 0)
+          if(randomNum !=2 && randomNum !=3  && randomNum !=4  && sword != 0)
           {
             userInput.html("You choose to open the second door. You found monster.But worry not,you use your sword to kill it.The sword gets trapped in the monster's rock hard skin. Move forward "+userName);
              sword = sword -1;
@@ -160,7 +165,7 @@ subBtn.click(function(){
            stage = stage+1;
            $('.stageNum').html(stage);
          }
-         if(randomNum == 1 && sword ==0 && sheild == 0)
+         if(randomNum !=2 && randomNum !=3  && randomNum !=4  && sword ==0 && sheild == 0)
          {
            userInput.html("You choose to open the third door.Whoops!...you can feel the stench of monster's den.You have no Sword! You have no sheild! And now, you have no head! Enjoy the afterlife "+userName);
           lives = lives -1;
@@ -168,7 +173,7 @@ subBtn.click(function(){
           stage = stage+1;
           $('.stageNum').html(stage);
           }
-           if(randomNum == 1 && sheild != 0)
+           if(randomNum !=2 && randomNum !=3  && randomNum !=4  && sheild != 0)
           {
             userInput.html("You choose to open the third door.Yor found a monster.He looks at you with his glowing red eyes in the dark.Scared shirtless , you put your shield forward,the shield breaks.But before the monster's razor sharp clawscan get to you, you close the door.")
             sheild = sheild -1;
@@ -176,7 +181,7 @@ subBtn.click(function(){
             $('.shield').html(sheild);
             $('.stageNum').html(stage);
           }
-          if(randomNum == 1 && sword != 0)
+          if(randomNum !=2 && randomNum !=3  && randomNum !=4  && sword != 0)
           {
             userInput.html("You choose to open the third door. You found monster.But worry not,you use your sword to kill it.The sword gets trapped in the monster's rock hard skin. Move forward "+userName);
              sword = sword -1;
@@ -190,9 +195,10 @@ subBtn.click(function(){
      else {
        startingSection.css({'display':'none'});
        $(document.body).css('background-image', 'url(images/game.jpeg)');
-       messageBox.css({'font-size':'12px'});
-       messageBox.css({'font-style':'bold'});
-       messageBox.css({'color':'white'});
+       messageBox.css({'font-size':'20px'});
+       messageBox.css({'font-weight':'bold'});
+       messageBox.css({'color':'black'});
+       audio.pause();
 
 
        if( stage < 5)
@@ -207,7 +213,7 @@ subBtn.click(function(){
        {
          userInput.html("Noob! You have NO SKILL in gaming.")
        }
-       if(stage >=15 && stage >32)
+       if(stage >=15 && stage <32)
        {
         userInput.html("You are going Great .You are so close to win. Keep Playing!")
        }
@@ -219,15 +225,3 @@ subBtn.click(function(){
      }
 
      });
-
-
-
-
-
-
-
-
-
-
-
-//game -function
